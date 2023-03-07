@@ -2,17 +2,19 @@
   "name": "backend",
   "version": "1.0.0",
   "description": "",
-  "main": "express.js",
+  "main": "index.js",
   "scripts": {
-    "start":"nodemon express.js"
-,    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "nodemon server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
     "express": "^4.18.2",
-    "mongoose": "^7.0.0",
-    "nodemon": "^2.0.21"
+    "nodemon": "^2.0.21",
+    "pg": "^8.8.0",
+    "pg-hstore": "^2.3.4",
+    "sequelize": "^6.26.0"
   }
 }
