@@ -1,25 +1,21 @@
-// ilk önce databse import ediyoruz const db=require('../database')
 const { DataTypes } = require('sequelize')
 const db=require('../database/index')
 
-
-// sonra tablomuzu oluşturuyoruz
-// User burada modelin adı sonrası kolonları 
-const userModel=db.sequelize.define('User',{
-    username:{
+const taskModel=db.sequelize.define('Task',{
+    taskname:{
         type:DataTypes.STRING(50),
         required:true
               
     },
-    email:{
+    taskdescription:{
         type:DataTypes.STRING(50),  
         unique:true       
     },
-    password:{
+    taskfinishdate:{
         type:DataTypes.STRING(50), 
         required:true        
     },
-    level:{
+    taskassingned:{
         type:DataTypes.STRING(50), 
         required:true        
     }
@@ -32,14 +28,6 @@ const userModel=db.sequelize.define('User',{
 
 })
 
-
-
-
-
-
-
-
 module.exports={
-    userModel
-    
-};
+    taskModel
+}

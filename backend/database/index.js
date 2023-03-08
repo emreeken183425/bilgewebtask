@@ -1,11 +1,12 @@
 // sequelize import ettik ilk önce
 const Sequelize = require("sequelize");
+
 let db = {};
 // postgresql ile bağlantı kurduk burada
 const sequelize = new Sequelize({
   host: "localhost",
   dialect: "postgres",
-  database: "BilgeWeb",
+  database: "bilgetaskweb",
   username: "postgres",
   password: "183425",
   port: 5433,
@@ -25,20 +26,11 @@ const CONNECT_DB = async (req, res) => {
 
 const REFRESH_DB = async () => {
   try {
-    const userModel=require("../models/userModel")
-   
+  const userModel=require("../models/userModel")
+  const taskModel=require('../models/taskModel')
 
-    
-
-    // // // book model ilişkileri
-      // userModel.hasOne(taskModel);
-    // // adminModel.belongsTo(userModel);
-
-    
- 
-
-
-
+  // userModel.belongsToMany(taskModel,{through:indexModel} )
+  // taskModel.belongsToMany(userModel,{through:indexModel})
 
     
 sequelize.sync({force:true})
