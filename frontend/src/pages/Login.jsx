@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Button, Form } from 'react-bootstrap';
+import { useNavigate } from 'react-router-dom';
 
 function Login() {
   const [email, setEmail] = useState('');
@@ -7,10 +8,12 @@ function Login() {
 
   const handleEmailChange = (event) => setEmail(event.target.value);
   const handlePasswordChange = (event) => setPassword(event.target.value);
-
+const navigate=useNavigate()
   const handleSubmit = (event) => {
     event.preventDefault();
     console.log(`Email: ${email}, Password: ${password}`);
+    navigate('/home')
+
   };
 
   return (
@@ -28,9 +31,7 @@ function Login() {
           <Form.Control type="password" placeholder="Password" value={password} onChange={handlePasswordChange} />
         </Form.Group>
 
-        <Button variant="primary" type="submit">
-          Login
-        </Button>
+        <Button variant="primary" type="submit" onClick={(event)=>handleSubmit(event) }  > Login   </Button>
       </Form>
     </div>
   );
